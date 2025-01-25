@@ -3,7 +3,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyCGzpz2j4-fYgXjuJ-vz5vUlxafci3_lnI",
     authDomain: "plataforma-estudiantes-bbc1a.firebaseapp.com",
     projectId: "plataforma-estudiantes-bbc1a",
-    storageBucket: "plataforma-estudiantes-bbc1a.firebasestorage.app",
+    storageBucket: "plataforma-estudiantes-bbc1a.appspot.com",
     messagingSenderId: "160878281876",
     appId: "1:160878281876:web:6fadcbdc68e5c23591a081",
     measurementId: "G-RJ6ZKSJEJK"
@@ -11,26 +11,25 @@ const firebaseConfig = {
 
 // Inicializa Firebase
 firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+
+// Referencia al servicio de autenticación
 const auth = firebase.auth();
 
-// Manejo del formulario de inicio de sesión
+// Manejador del formulario de inicio de sesión
 const form = document.getElementById('login-form');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const username = document.getElementById('username').value;
+
+    const email = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Inicio de sesión con Firebase Authentication
-    auth.signInWithEmailAndPassword(username, password)
+    // Inicia sesión
+    auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            // Inicio de sesión exitoso
-            alert('Bienvenido, ${username}');
-            console.log("Usuario autenticado:", userCredential.user);
+            const user = userCredential.user;
+            alert(Bienvenido, ${user.email});
         })
         .catch((error) => {
-            // Error en el inicio de sesión
-            console.error("Error al iniciar sesión:", error);
-            alert("Credenciales incorrectas o error en la autenticación");
+            alert(Error: ${error.message});
         });
 });
