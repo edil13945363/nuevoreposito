@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 // Referencia al servicio de autenticación
 const auth = firebase.auth();
@@ -27,9 +27,12 @@ form.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-        alert(`Bienvenido, ${user.email}`); // Interpolación correcta
+            alert(`Bienvenido, ${user.email}`);
+            // Aquí podrías redirigir a una página de perfil o mostrar información relevante
         })
         .catch((error) => {
-            alert(`Error: ${error.message}`);
+            const errorMessage = error.message;
+            document.getElementById('error-message').style.display = 'block';
+            alert(`Error: ${errorMessage}`);
         });
 });
