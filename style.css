@@ -1,32 +1,120 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
     margin: 0;
     padding: 0;
-    text-align: center;
-    background-color: #f4f4f4;
 }
 
-form {
-    margin: 20px auto;
+/* Cabecera */
+header {
+    background-color: #ffcc00;
+    color: #fff;
     padding: 20px;
-    background: white;
-    border-radius: 5px;
-    width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 5px solid #ff9900;
 }
 
-input {
+/* Estilos del formulario */
+form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffeb3b;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 1.2em;
+    margin: 10px 0;
     display: block;
-    margin: 10px auto;
-    padding: 8px;
-    width: 90%;
 }
 
-button {
-    padding: 10px 15px;
-    background: #007BFF;
-    color: white;
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    font-size: 1.2em;
     cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e64a19;
+}
+
+/* Escáner de QR */
+#qr-scanner {
+    background-color: #ffee58;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#qr-video {
+    border-radius: 10px;
+    border: 5px solid #ff5722;
+    margin-top: 15px;
+}
+
+#start-scan {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#start-scan:hover {
+    background-color: #388e3c;
+}
+
+/* Mensajes de error */
+#error-message {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f44336;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+/* Perfil del usuario */
+#user-profile {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e1bee7;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#user-profile h2 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-item {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.profile-item span {
+    font-weight: bold;
+    color: #ff5722;
 }
