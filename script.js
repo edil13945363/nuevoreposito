@@ -29,7 +29,7 @@ form.addEventListener('submit', (e) => {
             const user = userCredential.user;
 
             // Mostrar mensaje de bienvenida
-            alert(Bienvenido ${user.email});
+            alert(`Bienvenido ${user.email}`);
             
             // Ocultar el formulario de login
             document.getElementById('login-form').style.display = 'none';
