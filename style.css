@@ -5,6 +5,7 @@ body {
     text-align: center;
     background-color: #f4f4f4;
 }
+
 form {
     margin: 20px auto;
     padding: 20px;
@@ -13,12 +14,14 @@ form {
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 input {
     display: block;
     margin: 10px auto;
     padding: 8px;
     width: 90%;
 }
+
 button {
     padding: 10px 15px;
     background: #007BFF;
