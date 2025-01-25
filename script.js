@@ -27,9 +27,9 @@ form.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            alert(Bienvenido, ${user.email}); // Interpolación correcta
+        alert(`Bienvenido, ${user.email}`); // Interpolación correcta
         })
         .catch((error) => {
-            alert(Error: ${error.message});
+            alert(`Error: ${error.message}`);
         });
 });
