@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma de Estudiantes</title>
-    <!-- Enlace al archivo CSS -->
+    <title>Plataforma Estudiantil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bienvenido a la Plataforma de Estudiantes</h1>
-    
     <!-- Formulario de inicio de sesión -->
-    <form id="login-form">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" placeholder="Ingresa tu usuario" required>
-        
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
-        
+    <div id="login-form">
+        <h2>Bienvenido a la Plataforma Estudiantil</h2>
+        <input type="email" id="username" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
         <button type="submit">Iniciar sesión</button>
-    </form>
-    
-    <!-- Mensaje de error (oculto por defecto) -->
-    <div id="error-message" style="display:none; color: red;">
-        <p>Error: No se pudo iniciar sesión.</p>
     </div>
-    
-    <!-- Scripts -->
-    <script type="module" src="script.js"></script>
+
+    <!-- Panel del usuario -->
+    <div id="user-panel" style="display: none;">
+        <h2>Bienvenido, <span id="user-name"></span></h2>
+        <p>Email: <span id="user-email"></span></p>
+        <button id="logout-btn">Cerrar sesión</button>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <!-- Tu archivo JS -->
+    <script src="script.js"></script>
 </body>
 </html>
