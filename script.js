@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 // Referencia al servicio de autenticación
 const auth = firebase.auth();
