@@ -25,7 +25,7 @@ form.addEventListener('submit', (e) => {
     auth.signInWithEmailAndPassword(username, password)
         .then((userCredential) => {
             // Inicio de sesión exitoso
-            alert(Bienvenido, ${username});
+            alert('Bienvenido, ${username}');
             console.log("Usuario autenticado:", userCredential.user);
         })
         .catch((error) => {
