@@ -1,8 +1,3 @@
-// Importa Firebase desde sus módulos
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
-
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCGzpz2j4-fYgXjuJ-vz5vUlxafci3_lnI",
@@ -15,9 +10,10 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+firebase.initializeApp(firebaseConfig);
+
+// Referencia al servicio de autenticación
+const auth = firebase.auth();
 
 // Manejador del formulario de inicio de sesión
 const form = document.getElementById('login-form');
@@ -28,12 +24,42 @@ form.addEventListener('submit', (e) => {
     const password = document.getElementById('password').value;
 
     // Inicia sesión
-    signInWithEmailAndPassword(auth, email, password)
+    auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            alert(`Bienvenido, ${user.email}`); // Interpolación correcta
+
+            // Mostrar mensaje de bienvenida
+            alert(Bienvenido ${user.email});
+            
+            // Ocultar el formulario de login
+            document.getElementById('login-form').style.display = 'none';
+            
+            // Mostrar el panel del usuario
+            document.getElementById('user-panel').style.display = 'block';
+            
+            // Mostrar el nombre y correo del usuario
+            document.getElementById('user-name').textContent = user.displayName || 'Usuario';
+            document.getElementById('user-email').textContent = user.email;
         })
         .catch((error) => {
             alert(`Error: ${error.message}`);
+        });
+});
+
+// Cerrar sesión
+const logoutBtn = document.getElementById('logout-btn');
+logoutBtn.addEventListener('click', () => {
+    auth.signOut()
+        .then(() => {
+            // Ocultar el panel de usuario
+            document.getElementById('user-panel').style.display = 'none';
+
+            // Mostrar el formulario de login nuevamente
+            document.getElementById('login-form').style.display = 'block';
+
+            alert('Has cerrado sesión correctamente');
+        })
+        .catch((error) => {
+            alert(`Error al cerrar sesión: ${error.message}`);
         });
 });
