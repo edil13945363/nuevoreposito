@@ -1,3 +1,8 @@
+// Importa Firebase desde sus módulos
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCGzpz2j4-fYgXjuJ-vz5vUlxafci3_lnI",
@@ -10,10 +15,9 @@ const firebaseConfig = {
 };
 
 // Inicializa Firebase
-const app = firebase.initializeApp(firebaseConfig);
-
-// Referencia al servicio de autenticación
-const auth = firebase.auth();
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 // Manejador del formulario de inicio de sesión
 const form = document.getElementById('login-form');
@@ -24,15 +28,12 @@ form.addEventListener('submit', (e) => {
     const password = document.getElementById('password').value;
 
     // Inicia sesión
-    auth.signInWithEmailAndPassword(email, password)
+    signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            alert(`Bienvenido, ${user.email}`);
-            // Aquí podrías redirigir a una página de perfil o mostrar información relevante
+            alert(`Bienvenido, ${user.email}`); // Interpolación correcta
         })
         .catch((error) => {
-            const errorMessage = error.message;
-            document.getElementById('error-message').style.display = 'block';
-            alert(`Error: ${errorMessage}`);
+            alert(`Error: ${error.message}`);
         });
 });
