@@ -29,7 +29,7 @@ form.addEventListener('submit', (e) => {
             const user = userCredential.user;
 
             // Mostrar mensaje de bienvenida
-            alert(`Bienvenido ${user.email}`);
+            alert(` Bienvenido ${user.email}`);
             
             // Ocultar el formulario de login
             document.getElementById('login-form').style.display = 'none';
@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
             document.getElementById('user-email').textContent = user.email;
         })
         .catch((error) => {
-            alert(`Error: ${error.message}`);
+            alert(` Error: ${error.message}`);
         });
 });
 
@@ -60,6 +60,6 @@ logoutBtn.addEventListener('click', () => {
             alert('Has cerrado sesión correctamente');
         })
         .catch((error) => {
-            alert(`Error al cerrar sesión: ${error.message}`);
+            alert(` Error al cerrar sesión: ${error.message}`);
         });
 });
