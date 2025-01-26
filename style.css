@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('ruta_de_tu_imagen.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-image: url('image/image.jpeg'); /* Cambia esto por la ruta de tu imagen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
