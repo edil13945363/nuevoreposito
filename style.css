@@ -1,66 +1,60 @@
-/* Estilos para la plataforma */
+/* Fondo general con imagen */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('ruta_de_tu_imagen.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Contenedor del formulario */
+#login-form, #user-panel {
+    background-color: #ADD8E6; /* Azul claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
     text-align: center;
 }
 
-h1 {
-    color: #4CAF50;
-    margin-top: 50px;
-    font-size: 2.5em;
+h2 {
+    color: #333;
 }
 
-form {
-    background-color: #fff;
-    padding: 20px;
-    margin: 30px auto;
-    width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Campos de texto */
+input[type="email"], input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #FFD1DC; /* Rosa pálido */
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1.2em;
-    color: #4CAF50;
-}
-
-input[type="text"], input[type="password"] {
+/* Botones */
+button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-}
-
-button {
-    background-color: #4CAF50;
-    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 1.2em;
+    border-radius: 5px;
+    background-color: #77DD77; /* Verde pastel */
+    color: #fff;
+    font-weight: bold;
     cursor: pointer;
-    width: 100%;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #6CC76E; /* Verde pastel más oscuro al pasar el mouse */
 }
 
-/* Mensaje de error */
-#error-message {
-    color: red;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-#error-message p {
-    margin: 0;
+/* Ocultar el panel del usuario inicialmente */
+#user-panel {
+    display: none;
 }
